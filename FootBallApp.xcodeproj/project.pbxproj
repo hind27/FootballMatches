@@ -7,23 +7,51 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B3424CCA221D956D00640D2F /* Session .swift in Sources */ = {isa = PBXBuildFile; fileRef = B3424CC9221D956D00640D2F /* Session .swift */; };
+		B346BC91221DAA5000C0F6E7 /* TeamModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B346BC90221DAA5000C0F6E7 /* TeamModel.swift */; };
+		B346BC93221DF01700C0F6E7 /* API Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = B346BC92221DF01700C0F6E7 /* API Client.swift */; };
+		B346BC95221E0AB500C0F6E7 /* Competition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B346BC94221E0AB500C0F6E7 /* Competition.swift */; };
+		B346BC97221E225B00C0F6E7 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = B346BC96221E225B00C0F6E7 /* Match.swift */; };
+		B346BC9B221E29F700C0F6E7 /* CompetitionTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B346BC9A221E29F700C0F6E7 /* CompetitionTVCell.swift */; };
+		B34F12A12220A555005AE3BA /* MatchTeamVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34F12A02220A555005AE3BA /* MatchTeamVC.swift */; };
+		B34F12A32220AFC1005AE3BA /* MatchTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34F12A22220AFC1005AE3BA /* MatchTVCell.swift */; };
+		B34F12A52220B612005AE3BA /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34F12A42220B612005AE3BA /* DataController.swift */; };
+		B34F12A72220C031005AE3BA /* FavouriteTeamsTVController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34F12A62220C031005AE3BA /* FavouriteTeamsTVController.swift */; };
+		B34F12A92220C4BF005AE3BA /* FavouriteTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B34F12A82220C4BF005AE3BA /* FavouriteTVCell.swift */; };
 		B37195AF221C66B700BEF7AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37195AE221C66B700BEF7AD /* AppDelegate.swift */; };
-		B37195B1221C66B700BEF7AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37195B0221C66B700BEF7AD /* ViewController.swift */; };
 		B37195B4221C66B700BEF7AD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B37195B2221C66B700BEF7AD /* Main.storyboard */; };
 		B37195B7221C66B700BEF7AD /* FootBallApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B37195B5221C66B700BEF7AD /* FootBallApp.xcdatamodeld */; };
 		B37195B9221C66B700BEF7AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B37195B8221C66B700BEF7AD /* Assets.xcassets */; };
 		B37195BC221C66B700BEF7AD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B37195BA221C66B700BEF7AD /* LaunchScreen.storyboard */; };
+		B37195C6221C7D9800BEF7AD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B37195C5221C7D9800BEF7AD /* Constants.swift */; };
+		B3D4E75422203BEE005ED371 /* CompetitionTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4E75322203BEE005ED371 /* CompetitionTableVC.swift */; };
+		B3D4E75622204AED005ED371 /* TeamTableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4E75522204AED005ED371 /* TeamTableVC.swift */; };
+		B3D4E75822205697005ED371 /* TeamTVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B3D4E75722205697005ED371 /* TeamTVCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B3424CC9221D956D00640D2F /* Session .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Session .swift"; sourceTree = "<group>"; };
+		B346BC90221DAA5000C0F6E7 /* TeamModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamModel.swift; sourceTree = "<group>"; };
+		B346BC92221DF01700C0F6E7 /* API Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "API Client.swift"; sourceTree = "<group>"; };
+		B346BC94221E0AB500C0F6E7 /* Competition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Competition.swift; sourceTree = "<group>"; };
+		B346BC96221E225B00C0F6E7 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		B346BC9A221E29F700C0F6E7 /* CompetitionTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionTVCell.swift; sourceTree = "<group>"; };
+		B34F12A02220A555005AE3BA /* MatchTeamVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTeamVC.swift; sourceTree = "<group>"; };
+		B34F12A22220AFC1005AE3BA /* MatchTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTVCell.swift; sourceTree = "<group>"; };
+		B34F12A42220B612005AE3BA /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		B34F12A62220C031005AE3BA /* FavouriteTeamsTVController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTeamsTVController.swift; sourceTree = "<group>"; };
+		B34F12A82220C4BF005AE3BA /* FavouriteTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteTVCell.swift; sourceTree = "<group>"; };
 		B37195AB221C66B700BEF7AD /* FootBallApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FootBallApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B37195AE221C66B700BEF7AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B37195B0221C66B700BEF7AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		B37195B3221C66B700BEF7AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B37195B6221C66B700BEF7AD /* FootBallApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FootBallApp.xcdatamodel; sourceTree = "<group>"; };
 		B37195B8221C66B700BEF7AD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B37195BB221C66B700BEF7AD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B37195BD221C66B700BEF7AD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B37195C5221C7D9800BEF7AD /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B3D4E75322203BEE005ED371 /* CompetitionTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CompetitionTableVC.swift; sourceTree = "<group>"; };
+		B3D4E75522204AED005ED371 /* TeamTableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTableVC.swift; sourceTree = "<group>"; };
+		B3D4E75722205697005ED371 /* TeamTVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamTVCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +65,26 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B3424CCB221D9D6100640D2F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B37195B5221C66B700BEF7AD /* FootBallApp.xcdatamodeld */,
+				B34F12A42220B612005AE3BA /* DataController.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B3424CCC221D9DE200640D2F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				B3D4E75322203BEE005ED371 /* CompetitionTableVC.swift */,
+				B3D4E75522204AED005ED371 /* TeamTableVC.swift */,
+				B34F12A02220A555005AE3BA /* MatchTeamVC.swift */,
+				B34F12A62220C031005AE3BA /* FavouriteTeamsTVController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
 		B37195A2221C66B700BEF7AD = {
 			isa = PBXGroup;
 			children = (
@@ -56,15 +104,41 @@
 		B37195AD221C66B700BEF7AD /* FootBallApp */ = {
 			isa = PBXGroup;
 			children = (
+				B3D7BC83221E3666002CF46A /* Networking */,
+				B3CDDF7E221F7C7800B7EB7F /* View */,
+				B3424CCC221D9DE200640D2F /* Controller */,
+				B3424CCB221D9D6100640D2F /* Model */,
 				B37195AE221C66B700BEF7AD /* AppDelegate.swift */,
-				B37195B0221C66B700BEF7AD /* ViewController.swift */,
 				B37195B2221C66B700BEF7AD /* Main.storyboard */,
 				B37195B8221C66B700BEF7AD /* Assets.xcassets */,
 				B37195BA221C66B700BEF7AD /* LaunchScreen.storyboard */,
 				B37195BD221C66B700BEF7AD /* Info.plist */,
-				B37195B5221C66B700BEF7AD /* FootBallApp.xcdatamodeld */,
 			);
 			path = FootBallApp;
+			sourceTree = "<group>";
+		};
+		B3CDDF7E221F7C7800B7EB7F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B346BC9A221E29F700C0F6E7 /* CompetitionTVCell.swift */,
+				B3D4E75722205697005ED371 /* TeamTVCell.swift */,
+				B34F12A22220AFC1005AE3BA /* MatchTVCell.swift */,
+				B34F12A82220C4BF005AE3BA /* FavouriteTVCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B3D7BC83221E3666002CF46A /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				B346BC96221E225B00C0F6E7 /* Match.swift */,
+				B346BC94221E0AB500C0F6E7 /* Competition.swift */,
+				B37195C5221C7D9800BEF7AD /* Constants.swift */,
+				B346BC90221DAA5000C0F6E7 /* TeamModel.swift */,
+				B346BC92221DF01700C0F6E7 /* API Client.swift */,
+				B3424CC9221D956D00640D2F /* Session .swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,9 +213,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B34F12A72220C031005AE3BA /* FavouriteTeamsTVController.swift in Sources */,
+				B3D4E75822205697005ED371 /* TeamTVCell.swift in Sources */,
+				B346BC91221DAA5000C0F6E7 /* TeamModel.swift in Sources */,
+				B34F12A12220A555005AE3BA /* MatchTeamVC.swift in Sources */,
 				B37195B7221C66B700BEF7AD /* FootBallApp.xcdatamodeld in Sources */,
-				B37195B1221C66B700BEF7AD /* ViewController.swift in Sources */,
+				B3D4E75622204AED005ED371 /* TeamTableVC.swift in Sources */,
 				B37195AF221C66B700BEF7AD /* AppDelegate.swift in Sources */,
+				B3D4E75422203BEE005ED371 /* CompetitionTableVC.swift in Sources */,
+				B3424CCA221D956D00640D2F /* Session .swift in Sources */,
+				B346BC93221DF01700C0F6E7 /* API Client.swift in Sources */,
+				B346BC9B221E29F700C0F6E7 /* CompetitionTVCell.swift in Sources */,
+				B34F12A92220C4BF005AE3BA /* FavouriteTVCell.swift in Sources */,
+				B34F12A52220B612005AE3BA /* DataController.swift in Sources */,
+				B37195C6221C7D9800BEF7AD /* Constants.swift in Sources */,
+				B34F12A32220AFC1005AE3BA /* MatchTVCell.swift in Sources */,
+				B346BC95221E0AB500C0F6E7 /* Competition.swift in Sources */,
+				B346BC97221E225B00C0F6E7 /* Match.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
