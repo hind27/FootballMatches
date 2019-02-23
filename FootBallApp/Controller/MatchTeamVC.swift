@@ -22,11 +22,7 @@ class MatchTeamVC : UIViewController ,UITableViewDataSource ,UITableViewDelegate
    
     var TeamId :Int!
     var TeamName : String!
-    
-   // var teams : [FavouriteTeam] = []
-    
-   // var dataController: DataController!
-     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     //MARK :- lifeCycle Methods
     override func viewDidLoad() {
@@ -52,6 +48,7 @@ class MatchTeamVC : UIViewController ,UITableViewDataSource ,UITableViewDelegate
             favBtn.tintColor = UIColor.gray
         }
     }
+    
     //MARK :- Private Methods
     func getTeamMatches()
     {
@@ -97,66 +94,38 @@ class MatchTeamVC : UIViewController ,UITableViewDataSource ,UITableViewDelegate
         }
     
     }
-    // MARK: - Table view data source
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Matchs.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier:"MatchCell", for: indexPath) as! MatchTVCell
-        let Match = Matchs[indexPath.row]
-        cell.awayTeam.text = Match.awayteamname
-        cell.AwayTeamResult.text = String(Match.awayteamscore)
-        cell.homeTeam.text = Match.hometeamname
-        cell.homeTeamReuslt.text = String(Match.hometeamscore)
-        cell.Status.text = Match.matchStatus
-        cell.matchDate.text = getMatchDate(matchDate: Match.matchDate)
-        return cell
-    }
-    
     // Adds a new team to the end of the `FavouriteTeam` array
     func addfavourtTeam(teamId: Int , teamName : String) {
         
         let team = NSEntityDescription.insertNewObject(forEntityName: "FavouriteTeam", into: context) as! FavouriteTeam
         team.setValue(Int16(teamId), forKey: "id")
         team.setValue(teamName, forKey: "teamName")
-         //let team = FavouriteTeam(context: context)
-      //  team.id = Int16(teamId)
-       //  team.teamName = teamName
-         try? context.save()
-         //teams.append(team)
         
-//        //retrieve the entity
-//        let entity =  NSEntityDescription.entity(forEntityName: "TestEntity", in: context)
-//
-//        let testEntity = NSManagedObject(entity: entity!, insertInto: context)
-//
-//        //set the entity values
-//        testEntity.setValue(Int16(teamId), forKey: "id")
-//        testEntity.setValue(teamName, forKey: "teamName")
-
+        try? context.save()
+        
+        
     }
     func check( teamId:Int ) -> Bool {
         
-       let fetchRequest:NSFetchRequest<FavouriteTeam> = FavouriteTeam.fetchRequest()
-      
+        let fetchRequest:NSFetchRequest<FavouriteTeam> = FavouriteTeam.fetchRequest()
+        
         let predicate = NSPredicate(format:"id == %ld",Int16(teamId))
         fetchRequest.predicate = predicate
-
+        
         do{
-
-        let fetchResults = try context.fetch(fetchRequest)
+            
+            let fetchResults = try context.fetch(fetchRequest)
             
             if fetchResults.count != 0 {
                 return true
             } else {
-               return false
+                return false
             }
         } catch let error{
             print(error)
         }
-       
-       return false
+        
+        return false
     }
     func deletefavourtTeam(teamId:Int)
     {
@@ -197,4 +166,22 @@ class MatchTeamVC : UIViewController ,UITableViewDataSource ,UITableViewDelegate
         }
         
     }
+    // MARK: - Table view data source
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Matchs.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier:"MatchCell", for: indexPath) as! MatchTVCell
+        let Match = Matchs[indexPath.row]
+        cell.awayTeam.text = Match.awayteamname
+        cell.AwayTeamResult.text = String(Match.awayteamscore)
+        cell.homeTeam.text = Match.hometeamname
+        cell.homeTeamReuslt.text = String(Match.hometeamscore)
+        cell.Status.text = Match.matchStatus
+        cell.matchDate.text = getMatchDate(matchDate: Match.matchDate)
+        return cell
+    }
+    
+    
 }

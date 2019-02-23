@@ -51,8 +51,8 @@ class CompetitionTableVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) ->  UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier:"cell", for: indexPath) as! CompetitionTVCell
-        let competitionName = competion[indexPath.row]
-        cell.CompetitionName?.text = competitionName.CompetioName
+        let competition = competion[indexPath.row]
+        cell.CompetitionName?.text = competition.CompetioName
         return cell
     }
   
@@ -60,8 +60,10 @@ class CompetitionTableVC: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let competitionId = competion[indexPath.row].CompetionId
+        let competitionName = competion[indexPath.row].CompetioName
         let vc = self.storyboard?.instantiateViewController(withIdentifier:"ToListTeam") as! TeamTableVC
-        vc.id = competitionId 
+        vc.id = competitionId
+        vc.competitionName = competitionName
         self.navigationController?.pushViewController(vc, animated: true)
     }
     

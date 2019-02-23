@@ -13,10 +13,12 @@ class TeamTableVC: UITableViewController {
     let football = Football.sharedInstance()
     var teams = [TeamModel]()
     var id :Int!
+    var competitionName : String!
    
     override func viewDidLoad() {
         super.viewDidLoad()
          getTeams()
+         navigationItem.title = competitionName
     }
 
     func getTeams()
