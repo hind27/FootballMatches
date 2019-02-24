@@ -8,15 +8,15 @@
  
  user can add any team to favourite list or remove the team from the favourite list .
  
+ 
+<img src="https://user-images.githubusercontent.com/14795838/53306582-930f9580-3897-11e9-8249-e89876e74064.png" width="280">
 
-![simulator screen shot - iphone 8 plus - 2019-02-25 at 00 21 59](https://user-images.githubusercontent.com/14795838/53306564-5a6fbc00-3897-11e9-8bc2-0cbe2562e187.png)
+<img src="https://user-images.githubusercontent.com/14795838/53306564-5a6fbc00-3897-11e9-8bc2-0cbe2562e187.png" width="280">
 
-![simulator screen shot - iphone 8 plus - 2019-02-25 at 00 21 46](https://user-images.githubusercontent.com/14795838/53306570-6a879b80-3897-11e9-9c0e-0198d088d2a5.png)
+<img src="https://user-images.githubusercontent.com/14795838/53306570-6a879b80-3897-11e9-9c0e-0198d088d2a5.png" width="280">
 
-![simulator screen shot - iphone 8 plus - 2019-02-25 at 00 21 52](https://user-images.githubusercontent.com/14795838/53306574-707d7c80-3897-11e9-8f91-7b15b4802a54.png)
+<img src="https://user-images.githubusercontent.com/14795838/53306574-707d7c80-3897-11e9-8f91-7b15b4802a54.png" width="280">
 
-
-![simulator screen shot - iphone 8 plus - 2019-02-24 at 16 36 51](https://user-images.githubusercontent.com/14795838/53306582-930f9580-3897-11e9-8249-e89876e74064.png)
 
 
 # Implementation 
