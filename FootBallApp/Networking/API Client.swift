@@ -124,6 +124,7 @@ class func sharedInstance() -> Football{
             responseClosure(teams, nil)
         }}
 
+    
  func getTeamMatchs( id:Int ,responseClosure: @escaping (_ array:[Match]? , _ error: String?) -> Void) {
  
       print(id)
@@ -209,4 +210,6 @@ class func sharedInstance() -> Football{
          
           responseClosure(matches, nil)
     }}
+    
+   
 }

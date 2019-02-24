@@ -14,25 +14,27 @@ class MatchTeamVC : UIViewController ,UITableViewDataSource ,UITableViewDelegate
     //MARK :- outlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var teamName: UILabel!
-    
     @IBOutlet weak var favBtn: UIBarButtonItem!
+    
+    
     //MARK :- Variables/constants
     let football = Football.sharedInstance()
     var Matchs = [Match]()
-   
     var TeamId :Int!
     var TeamName : String!
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
+    
     //MARK :- lifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-       
         teamName.text = TeamName
-       getTeamMatches()
+        getTeamMatches()
+        tableView.allowsSelection = false
         self.tableView.dataSource = self
  
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         if check(teamId:TeamId)
@@ -69,6 +71,7 @@ class MatchTeamVC : UIViewController ,UITableViewDataSource ,UITableViewDelegate
         }
         
     }
+    
     private func alertWithError(error: String) {
         
         let alertView = UIAlertController(title:"Login Error", message: error, preferredStyle: .alert)
