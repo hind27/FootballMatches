@@ -62,11 +62,12 @@ class FavouriteTeamsTVController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier:"cell", for: indexPath) as! FavouriteTVCell
-        
-       let team = Teams[indexPath.row]
+        let team = Teams[indexPath.row]
         cell.teamFav?.text = team.teamName
-        
-
+        let url = URL(string: team.teamimage!)
+        let data = try? Data(contentsOf: url!)
+        cell.teamImage.image = UIImage(data: data!)
+    
         return cell
     }
  

@@ -34,6 +34,7 @@ class func sharedInstance() -> Football{
                                                             Constants.APIMethods.plan_key: Constants.APIMethods.plan_value
                                                                 as AnyObject])
         
+     
         print(competitionsURL)
         sessionObject.makeRequest(Url:competitionsURL) { (data, error) in
             // Check For Errors
@@ -111,12 +112,15 @@ class func sharedInstance() -> Football{
             }
             var teams : [TeamModel] = []
             for index in 0...teamsArray.count-1 {
+                let team = TeamModel()
                 let teamDictionary = teamsArray[index] as [String: AnyObject]
                 if let teamId = teamDictionary[Constants.FootballParameterKeys.TeamId],let teamName = teamDictionary[Constants.FootballParameterKeys.TeamName]
                 {
                     let teamId = teamId as! Int
                     let teamName = teamName as! String
-                    teams.append(TeamModel(TeamId: teamId, TeamName: teamName))
+                    team.setteamId(TeamId: teamId)
+                    team.setteamName(TeamName: teamName)
+                    teams.append(team)
                 }
                
             }
@@ -210,6 +214,76 @@ class func sharedInstance() -> Football{
          
           responseClosure(matches, nil)
     }}
+    func getTeamIcon( teamName :String ,responseClosure: @escaping (_ imageUrlString: String, _ error: String?) -> Void){
+    // create session and request
+        var  components = URLComponents()
+        components.scheme = Constants.APIComponents.APIScheme
+        components.host =  "thesportsdb.com"
+        components.path = "/api/v1/json/1/searchteams.php"
     
-   
+        let parameters = ["t": teamName as AnyObject]
+         components.queryItems = [URLQueryItem]()
+            for (key, value) in parameters {
+                let queryItem = URLQueryItem(name: key, value: "\(value)")
+                components.queryItems?.append(queryItem)
+            }
+       
+        let tempurl = components.string
+        print(tempurl)
+        
+       //let url = URL(string:link)
+        var request = URLRequest(url: components.url!)
+        request.httpMethod = "GET"
+        let task = URLSession.shared.dataTask(with: request){ (data, response, error) in
+            // if an error occurs, print it and re-enable the UI
+            func displayError(_ error: String) {
+                print(error)
+                responseClosure("", error)
+                
+            }
+            /* GUARD: Was there an error? */
+            guard (error == nil) else {
+                ///iphone not connected
+                responseClosure("", "check network connection")
+                displayError("check network connection")
+                return
+            }
+            /* GUARD: Did we get a successful 2XX response? */
+            guard let statusCode = (response as? HTTPURLResponse)?.statusCode, statusCode >= 200 && statusCode <= 299 else {
+                responseClosure("", error as? String)
+                displayError("Your request returned a status code other than 2xx!")
+                return
+            }
+            /* GUARD: Was there any data returned? */
+            guard let data = data else {
+                displayError("No data was returned by the request!")
+                responseClosure("","No data was returned by the request!")
+                return
+            }
+            // parse the data
+            let parsedResult: [String:AnyObject]!
+            do {
+                parsedResult = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as! [String:AnyObject]
+            } catch {
+                
+                displayError("Could not parse the data as JSON: '\(data)'")
+                responseClosure("", "Could not parse the data as JSON: '\(data)'")
+                return
+            }
+            /* GUARD: Is "photos" key in our result? */
+            guard let TeamArray = parsedResult["teams"] as? [[String:AnyObject]] else {
+                displayError("Cannot find keys '\("0")' in \(parsedResult)")
+                responseClosure("", "Cannot find keys '\("0")' in \(parsedResult)")
+                return
+            }
+              let TeamDictionary = TeamArray[0] as [String: AnyObject]
+            if let teamicon = TeamDictionary["strTeamBadge"]{
+                let teamicon = teamicon as! String
+                responseClosure(teamicon, nil)
+
+             }
+      
+        }
+       task.resume()
+    }
 }

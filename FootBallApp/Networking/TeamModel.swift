@@ -8,16 +8,28 @@
 
 import Foundation
 
-struct TeamModel 
+class TeamModel
 {
    
-    let TeamId: Int
-    let TeamName: String
+    var TeamId: Int!
+    var TeamName: String!
+    var teamIcon:String!
    
     
-    init(TeamId: Int,  TeamName: String ) {
-        self.TeamId = TeamId
+  
+    func setteamName( TeamName: String  ) {
+        
         self.TeamName = TeamName
-     
+        
+    }
+    func setteamId(TeamId: Int ) {
+        
+        self.TeamId = TeamId
+        
+    }
+    func setteamlogo(teamIcon: String ) {
+        
+        self.teamIcon = teamIcon
+        
     }
 }

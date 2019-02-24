@@ -10,6 +10,7 @@ import UIKit
 
 class FavouriteTVCell: UITableViewCell {
 
+    @IBOutlet weak var teamImage: UIImageView!
     @IBOutlet weak var teamFav: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

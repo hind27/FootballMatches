@@ -39,7 +39,6 @@ class Session {
     
     func makeRequest(Url: URL, responseClosure: @escaping (NSData?, String?) -> Void){
         
-         //request.setValue("secret-keyValue", forHTTPHeaderField: "secret-key")
         // Create request from passed URL
         var request = URLRequest(url: Url)
         request.httpMethod = "GET"
@@ -49,7 +48,7 @@ class Session {
                             Constants.APIHeaderKeys.X_Auth_Token: Constants.APIHeaderValues.X_Auth_Token ] as [String:String]
      
         // Add headers if present
-        if let requestHeaders:[String : String] = finalHeaders  {
+        if let requestHeaders:[String : String] = finalHeaders {
             for (key, value) in requestHeaders {
                 request.addValue(value, forHTTPHeaderField: key)
             }

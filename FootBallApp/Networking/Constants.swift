@@ -50,7 +50,7 @@ struct Constants {
         static let teams = "teams"
         static let TeamIcon  = "crestUrl"
         static let TeamId = "id"
-        static let TeamName = "name"
+        static let TeamName = "shortName"
         
         static let matches =  "matches"
         static let MatchData = "utcDate"

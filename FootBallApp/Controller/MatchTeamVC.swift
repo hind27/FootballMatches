@@ -15,7 +15,7 @@ class MatchTeamVC : UIViewController ,UITableViewDataSource ,UITableViewDelegate
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var teamName: UILabel!
     @IBOutlet weak var favBtn: UIBarButtonItem!
-    
+    @IBOutlet weak var teamimage: UIImageView!
     
     //MARK :- Variables/constants
     let football = Football.sharedInstance()
@@ -23,12 +23,14 @@ class MatchTeamVC : UIViewController ,UITableViewDataSource ,UITableViewDelegate
     var TeamId :Int!
     var TeamName : String!
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    var teamlogo : String!
 
     
     //MARK :- lifeCycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         teamName.text = TeamName
+        getteamlogo()
         getTeamMatches()
         tableView.allowsSelection = false
         self.tableView.dataSource = self
@@ -72,6 +74,34 @@ class MatchTeamVC : UIViewController ,UITableViewDataSource ,UITableViewDelegate
         
     }
     
+    func getteamlogo()  {
+       
+        football.getTeamIcon(teamName: TeamName){(teamlogoReturned, error) in
+            if let error = error  {
+                self.alertWithError(error: error)
+            } else {
+                if(teamlogoReturned.isEmpty)
+                {
+                    self.alertWithError(error: "error")
+                }
+                else
+                {
+                    self.teamlogo =  teamlogoReturned
+                    DispatchQueue.main.async {
+                        //self.loadData()
+                        let url = URL(string: self.teamlogo)
+                        let data = try? Data(contentsOf: url!)
+                        self.teamimage.image = UIImage(data: data!)
+                        
+                    }                }
+               
+               }
+            }
+    }
+    
+    
+    
+    
     private func alertWithError(error: String) {
         
         let alertView = UIAlertController(title:"Login Error", message: error, preferredStyle: .alert)
@@ -103,7 +133,7 @@ class MatchTeamVC : UIViewController ,UITableViewDataSource ,UITableViewDelegate
         let team = NSEntityDescription.insertNewObject(forEntityName: "FavouriteTeam", into: context) as! FavouriteTeam
         team.setValue(Int16(teamId), forKey: "id")
         team.setValue(teamName, forKey: "teamName")
-        
+         team.setValue(teamlogo, forKey: "teamimage")
         try? context.save()
         
         
